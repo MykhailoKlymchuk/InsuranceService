@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="600.0" maxWidth="1009.0" minHeight="523.0" minWidth="400.0" prefHeight="525.0" prefWidth="1000.0" style="-fx-background-color: #2e3340;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.insuranceservice.Controllers.SearchObl">
+    <children>
+        <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="500.0" prefWidth="970.0" style="-fx-background-radius: 10; -fx-background-color: d9d9d9;">
+            <children>
+                <AnchorPane layoutX="-1.0" prefHeight="500.0" prefWidth="231.0" style="-fx-background-color: #fafafa; -fx-background-radius: 10;">
+                    <children>
+                        <Button fx:id="addObl" layoutX="25.0" layoutY="90.0" mnemonicParsing="false" onAction="#addOblAction" prefHeight="44.0" prefWidth="188.0" style="-fx-background-color: #2e3340; -fx-background-radius: 10;" text="• add a new obligation" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="15.0" />
+                            </font>
+                        </Button>
+                        <Button fx:id="viewAllObl" layoutX="25.0" layoutY="140.0" mnemonicParsing="false" onAction="#viewAllOblAction" prefHeight="44.0" prefWidth="188.0" style="-fx-background-color: #2e3340; -fx-background-radius: 10;" text="• view all obligations" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="15.0" />
+                            </font>
+                        </Button>
+                        <Button fx:id="addClient" layoutX="25.0" layoutY="190.0" mnemonicParsing="false" onAction="#addClientAction" prefHeight="44.0" prefWidth="188.0" style="-fx-background-color: #2e3340; -fx-background-radius: 10;" text="• add a new client" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="15.0" />
+                            </font>
+                        </Button>
+                        <Button fx:id="viewAllClient" layoutX="25.0" layoutY="240.0" mnemonicParsing="false" onAction="#viewAllClientAction" prefHeight="44.0" prefWidth="188.0" style="-fx-background-color: #2e3340; -fx-background-radius: 10;" text="• view all clients" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="15.0" />
+                            </font>
+                        </Button>
+                        <Button fx:id="searchObl" layoutX="25.0" layoutY="290.0" mnemonicParsing="false" onAction="#searchOblAction" prefHeight="44.0" prefWidth="188.0" style="-fx-background-color: #2e3340; -fx-background-radius: 10;" text="• search the obligation" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="15.0" />
+                            </font>
+                        </Button>
+                        <Button fx:id="valueDer" layoutX="25.0" layoutY="340.0" mnemonicParsing="false" onAction="#valueDerAction" prefHeight="44.0" prefWidth="188.0" style="-fx-background-color: #2e3340; -fx-background-radius: 10;" text="• value of derivative" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="15.0" />
+                            </font>
+                        </Button>
+                        <Button fx:id="exit" layoutX="70.0" layoutY="422.0" mnemonicParsing="false" onAction="#exitAction" prefHeight="44.0" prefWidth="99.0" style="-fx-background-color: #2e3340; -fx-background-radius: 10;" text="Exit" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="15.0" />
+                            </font>
+                        </Button>
+                        <Label layoutX="50.0" layoutY="14.0" prefWidth="135.0" text="Menu:" textFill="#2e3340">
+                            <font>
+                                <Font name="Lobster Regular" size="55.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </AnchorPane>
+                <Label layoutX="422.0" layoutY="14.0" text="Search obligations" textFill="#2e3340">
+                    <font>
+                        <Font name="Lobster Regular" size="50.0" />
+                    </font>
+                </Label>
+                <AnchorPane layoutX="254.0" layoutY="84.0" prefHeight="408.0" prefWidth="700.0" style="-fx-background-color: #fafafa; -fx-background-radius: 10;">
+                    <children>
+                        <TableView fx:id="tableObls" layoutX="10.0" layoutY="200.0" prefHeight="196.0" prefWidth="680.0">
+                            <columns>
+                                <TableColumn fx:id="id" style="-fx-alignment: center;" text="id obligation" />
+                                <TableColumn fx:id="idClient" minWidth="0.0" prefWidth="58.0" style="-fx-alignment: center;" text="id client" />
+                                <TableColumn fx:id="subjectInsurance" prefWidth="120.0" style="-fx-alignment: center;" text="subject insurance" />
+                                <TableColumn fx:id="levelOfRisk" prefWidth="90.0" style="-fx-alignment: center;" text="level of risk" />
+                                <TableColumn fx:id="cost" prefWidth="90.0" style="-fx-alignment: center;" text="cost" />
+                                <TableColumn fx:id="creationDate" prefWidth="120.0" style="-fx-alignment: center;" text="creation date" />
+                                <TableColumn fx:id="dateOfTermination" prefWidth="120.0" style="-fx-alignment: center;" text="date of termination" />
+                            </columns>
+                        </TableView>
+                        <Button fx:id="searchId" layoutX="180.0" layoutY="12.0" mnemonicParsing="false" onAction="#searchIdAction" text="Search by id">
+                            <font>
+                                <Font size="15.0" />
+                            </font>
+                        </Button>
+                        <Button fx:id="searchCost" layoutX="180.0" layoutY="50.0" mnemonicParsing="false" onAction="#searchCostAction" text="Search by cost">
+                            <font>
+                                <Font size="15.0" />
+                            </font>
+                        </Button>
+                        <Button fx:id="searchRisk" layoutX="180.0" layoutY="88.0" mnemonicParsing="false" onAction="#searchRiskAction" text="Search by level of risk">
+                            <font>
+                                <Font size="15.0" />
+                            </font>
+                        </Button>
+                        <Button fx:id="searchTerminationDate" layoutX="180.0" layoutY="162.0" mnemonicParsing="false" onAction="#searchTerminationDateAction" text="Search by date termination">
+                            <font>
+                                <Font size="15.0" />
+                            </font>
+                        </Button>
+                        <TextField fx:id="Lower" layoutX="14.0" layoutY="45.0" prefHeight="42.0" prefWidth="150.0" promptText="Lower border">
+                            <font>
+                                <Font size="15.0" />
+                            </font>
+                        </TextField>
+                        <TextField fx:id="Upper" layoutX="14.0" layoutY="104.0" prefHeight="42.0" prefWidth="150.0" promptText="Upper border">
+                            <font>
+                                <Font size="15.0" />
+                            </font>
+                        </TextField>
+                        <Button fx:id="searchCreationDate" layoutX="180.0" layoutY="125.0" mnemonicParsing="false" onAction="#searchCreationDateAction" text="Search by creation date">
+                            <font>
+                                <Font size="15.0" />
+                            </font>
+                        </Button>
+                        <TextField fx:id="oblId" layoutX="476.0" layoutY="45.0" prefHeight="42.0" prefWidth="150.0" promptText="id obligation">
+                            <font>
+                                <Font size="15.0" />
+                            </font>
+                        </TextField>
+                        <Button fx:id="pay" layoutX="476.0" layoutY="110.0" mnemonicParsing="false" onAction="#pay" prefHeight="31.0" prefWidth="150.0" text="pay the obligation">
+                            <font>
+                                <Font size="15.0" />
+                            </font>
+                        </Button>
+                    </children>
+                </AnchorPane>
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>

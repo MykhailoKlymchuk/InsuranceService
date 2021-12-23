@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="600.0" maxWidth="1009.0" minHeight="523.0" minWidth="400.0" prefHeight="525.0" prefWidth="675.0" style="-fx-background-color: #2e3340;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.insuranceservice.Controllers.AddNewClient">
+    <children>
+        <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="500.0" prefWidth="650.0" style="-fx-background-radius: 10; -fx-background-color: d9d9d9;">
+            <children>
+                <AnchorPane layoutX="-1.0" prefHeight="500.0" prefWidth="231.0" style="-fx-background-color: #fafafa; -fx-background-radius: 10;">
+                    <children>
+                        <Button fx:id="addObl" layoutX="25.0" layoutY="90.0" mnemonicParsing="false" onAction="#addOblAction" prefHeight="44.0" prefWidth="188.0" style="-fx-background-color: #2e3340; -fx-background-radius: 10;" text="• add a new obligation" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="15.0" />
+                            </font>
+                        </Button>
+                        <Button fx:id="viewAllObl" layoutX="25.0" layoutY="140.0" mnemonicParsing="false" onAction="#viewAllOblAction" prefHeight="44.0" prefWidth="188.0" style="-fx-background-color: #2e3340; -fx-background-radius: 10;" text="• view all obligations" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="15.0" />
+                            </font>
+                        </Button>
+                        <Button fx:id="addClient" layoutX="25.0" layoutY="190.0" mnemonicParsing="false" onAction="#addClientAction" prefHeight="44.0" prefWidth="188.0" style="-fx-background-color: #2e3340; -fx-background-radius: 10;" text="• add a new client" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="15.0" />
+                            </font>
+                        </Button>
+                        <Button fx:id="viewAllClient" layoutX="25.0" layoutY="240.0" mnemonicParsing="false" onAction="#viewAllClientAction" prefHeight="44.0" prefWidth="188.0" style="-fx-background-color: #2e3340; -fx-background-radius: 10;" text="• view all clients" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="15.0" />
+                            </font>
+                        </Button>
+                        <Button fx:id="searchObl" layoutX="25.0" layoutY="290.0" mnemonicParsing="false" onAction="#searchOblAction" prefHeight="44.0" prefWidth="188.0" style="-fx-background-color: #2e3340; -fx-background-radius: 10;" text="• search the obligation" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="15.0" />
+                            </font>
+                        </Button>
+                        <Button fx:id="valueDer" layoutX="25.0" layoutY="340.0" mnemonicParsing="false" onAction="#valueDerAction" prefHeight="44.0" prefWidth="188.0" style="-fx-background-color: #2e3340; -fx-background-radius: 10;" text="• value of derivative" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="15.0" />
+                            </font>
+                        </Button>
+                        <Button fx:id="exit" layoutX="70.0" layoutY="422.0" mnemonicParsing="false" onAction="#exitAction" prefHeight="44.0" prefWidth="99.0" style="-fx-background-color: #2e3340; -fx-background-radius: 10;" text="Exit" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="15.0" />
+                            </font>
+                        </Button>
+                        <Label layoutX="50.0" layoutY="14.0" prefWidth="135.0" text="Menu:" textFill="#2e3340">
+                            <font>
+                                <Font name="Lobster Regular" size="55.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </AnchorPane>
+                <Label layoutX="293.0" layoutY="14.0" text="Add new client" textFill="#2e3340">
+                    <font>
+                        <Font name="Lobster Regular" size="50.0" />
+                    </font>
+                </Label>
+                <AnchorPane layoutX="253.0" layoutY="75.0" prefHeight="411.0" prefWidth="370.0" style="-fx-background-color: #fafafa; -fx-background-radius: 10;">
+                    <children>
+                        <TextField fx:id="firstName" layoutX="50.0" layoutY="14.0" prefHeight="44.0" prefWidth="271.0" promptText="first name">
+                            <font>
+                                <Font size="20.0" />
+                            </font>
+                        </TextField>
+                        <TextField fx:id="lastName" layoutX="50.0" layoutY="70.0" prefHeight="44.0" prefWidth="271.0" promptText="last name">
+                            <font>
+                                <Font size="20.0" />
+                            </font>
+                        </TextField>
+                        <TextField fx:id="bankAccountNumber" layoutX="50.0" layoutY="180.0" prefHeight="44.0" prefWidth="271.0" promptText="bank account number">
+                            <font>
+                                <Font size="20.0" />
+                            </font>
+                        </TextField>
+                        <TextField fx:id="email" layoutX="50.0" layoutY="234.0" prefHeight="44.0" prefWidth="271.0" promptText="email">
+                            <font>
+                                <Font size="20.0" />
+                            </font>
+                        </TextField>
+                        <TextField fx:id="phoneNumber" layoutX="50.0" layoutY="290.0" prefHeight="44.0" prefWidth="271.0" promptText="phone number">
+                            <font>
+                                <Font size="20.0" />
+                            </font>
+                        </TextField>
+                        <TextField fx:id="dateBirth" layoutX="50.0" layoutY="125.0" prefHeight="44.0" prefWidth="271.0" promptText="date of birth yyyy-mm-dd">
+                            <font>
+                                <Font size="20.0" />
+                            </font>
+                        </TextField>
+                        <Button fx:id="add1" layoutX="106.0" layoutY="353.0" mnemonicParsing="false" onAction="#addNewClientAction" prefHeight="44.0" prefWidth="159.0" style="-fx-background-color: #2e3340; -fx-background-radius: 10;" text="Add" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="15.0" />
+                            </font>
+                        </Button>
+                    </children>
+                </AnchorPane>
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>
