@@ -10,7 +10,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public abstract class Menu {
+public class Menu {
     private Stage stage;
     private Scene scene;
     private Parent root;

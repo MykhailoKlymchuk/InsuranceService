@@ -13,33 +13,23 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
-
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class SearchObl  extends Menu {
+    static final Logger logger= LogManager.getLogger(SearchObl.class);
+    @FXML private TextField Lower;
+    @FXML private TextField Upper;
+    @FXML private TextField oblId;
 
-    @FXML
-    private TextField Lower;
-    @FXML
-    private TextField Upper;
-    @FXML
-    private TextField oblId;
-
-    @FXML
-    private TableView<InsuranceObligation> tableObls;
-    @FXML
-    private TableColumn<?, ?> cost;
-    @FXML
-    private TableColumn<?, ?> creationDate;
-    @FXML
-    private TableColumn<?, ?> dateOfTermination;
-    @FXML
-    private TableColumn<?, ?> id;
-    @FXML
-    private TableColumn<?, ?> idClient;
-    @FXML
-    private TableColumn<?, ?> levelOfRisk;
-    @FXML
-    private TableColumn<?, ?> subjectInsurance;
+    @FXML private TableView<InsuranceObligation> tableObls;
+    @FXML private TableColumn<?, ?> cost;
+    @FXML private TableColumn<?, ?> creationDate;
+    @FXML private TableColumn<?, ?> dateOfTermination;
+    @FXML private TableColumn<?, ?> id;
+    @FXML private TableColumn<?, ?> idClient;
+    @FXML private TableColumn<?, ?> levelOfRisk;
+    @FXML private TableColumn<?, ?> subjectInsurance;
 
     DatabaseHandler DB = new DatabaseHandler();
 
@@ -91,6 +81,7 @@ public class SearchObl  extends Menu {
         if (!oblId.getText().trim().isEmpty()&&DB.checkObl(oblId.getText().trim())) {
             DB.pay(oblId.getText().trim());
             show(DB.getAllObl());
+            logger.error("Здійснено страхову виплату id="+oblId.getText().trim());
         }else {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Request error");

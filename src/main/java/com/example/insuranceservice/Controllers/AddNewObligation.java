@@ -6,6 +6,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.sql.SQLException;
 import java.text.ParseException;
@@ -14,16 +16,12 @@ import java.util.Date;
 
 public class AddNewObligation  extends Menu {
 
-    @FXML
-    private TextField cost;
-    @FXML
-    private TextField dateOfTermination;
-    @FXML
-    private TextField idClient;
-    @FXML
-    private TextField levelOfRisk;
-    @FXML
-    private TextField subjectInsurance;
+    static final Logger logger= LogManager.getLogger(AddNewObligation.class);
+    @FXML private TextField cost;
+    @FXML private TextField dateOfTermination;
+    @FXML private TextField idClient;
+    @FXML private TextField levelOfRisk;
+    @FXML private TextField subjectInsurance;
 
     @FXML
     public void addNewObl(ActionEvent event) throws SQLException, ClassNotFoundException {
@@ -52,6 +50,7 @@ public class AddNewObligation  extends Menu {
                 subjectInsurance.setText("");
                 levelOfRisk.setText("");
                 dateOfTermination.setText("");
+                logger.info("add new obl");
             }else {
                 Alert alert=new Alert(Alert.AlertType.WARNING);
                 alert.setTitle("Request error");

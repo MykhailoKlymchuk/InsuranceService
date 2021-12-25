@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Configuration status="INFO">
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{yyy-MM-dd HH:mm:ss.SSS} [%c{1}] %-5level %logger{36} - %msg%n"/>
+        </Console>
+        <File name="File" fileName="app.log" immediateFlush="false" append="true">
+            <PatternLayout pattern="%d{yyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </File>
+       <SMTP name="Mail"
+             subject="Error log / massage"
+             to="misha2003vip@gmail.com"
+             from="misha2003vip@gmail.com"
+             smtpUsername="misha2003vip@gmail.com"
+             smtpPassword=""
+             smtpHost="smtp.gmail.com"
+             smtpPort="465"
+             bufferSize="50"
+             ignoreExceptions="flase"
+             smtpProtocol="smtps">
+           <PatternLayout pattern="%d{yyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+       </SMTP>
+    </Appenders>
+    <Loggers>
+        <Root level="trace">
+            <AppenderRef ref="Console" level="info"/>
+            <AppenderRef ref="Mail" level="error"/>
+            <AppenderRef ref="File"/>
+        </Root>
+    </Loggers>
+</Configuration>
+

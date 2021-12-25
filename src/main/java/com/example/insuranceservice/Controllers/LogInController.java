@@ -9,29 +9,27 @@ package com.example.insuranceservice.Controllers;
  import javafx.scene.control.*;
  import javafx.scene.image.Image;
  import javafx.stage.Stage;
+ import org.apache.logging.log4j.LogManager;
+ import org.apache.logging.log4j.Logger;
 
-public class Controller {
+public class LogInController {
 
-    @FXML
-    private Button loginButton;
-    @FXML
-    private TextField loginField;
-    @FXML
-    private PasswordField passwordField;
+    static final Logger logger= LogManager.getLogger(LogInController.class);
+    @FXML private Button loginButton;
+    @FXML private TextField loginField;
+    @FXML private PasswordField passwordField;
 
-
-    @FXML
-    private void cancelButtonAction() {
+    @FXML private void cancelButtonAction() {
         System.exit(0);
     }
 
-    @FXML
-    private void loginButtonAction() throws SQLException, ClassNotFoundException {
+    @FXML private void loginButtonAction() throws SQLException, ClassNotFoundException {
         var DB=new DatabaseHandler();
         String loginText = loginField.getText().trim();
         String loginPassword = passwordField.getText().trim();
         if (!loginText.equals("") && (!loginPassword.equals(""))) {
             if (DB.checkUser(loginText,loginPassword)) {
+                logger.info("Вхід в систему...");
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("app.fxml")); // створення сцени, відвантаження з файлу .fxml
                 Stage _stage = (Stage) loginButton.getScene().getWindow(); // повернення батьківської арени
                 _stage.close(); //закриття арени

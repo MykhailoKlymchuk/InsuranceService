@@ -7,9 +7,12 @@ import com.example.insuranceservice.Date.Client;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 
 public class ViewAllClient  extends Menu {
+    static final Logger logger= LogManager.getLogger(ViewAllClient.class);
 
     @FXML private TextField idDetele;
 
@@ -31,6 +34,7 @@ public class ViewAllClient  extends Menu {
                 if (!DB.checkClientWithObl(id)) {
                     DB.deleteClient(id);
                     initialize();
+                    logger.info("Зобов'язання з id="+id+" видалено.");
                 } else {
                     Alert alert = new Alert(Alert.AlertType.WARNING);
                     alert.setTitle("Request error");
@@ -43,7 +47,6 @@ public class ViewAllClient  extends Menu {
                 alert.setHeaderText("Client with id not found!");
                 alert.showAndWait();
             }
-
         }
     }
 
